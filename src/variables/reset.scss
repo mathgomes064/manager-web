@@ -77,3 +77,20 @@ table {
     }
 }
 .material-icons { font-size: 20px; }
+
+::-webkit-scrollbar {
+width: 5px;             
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+background: $background-color;       
+border-radius: 20px;      
+}
+
+::-webkit-scrollbar-thumb {
+background-color: $card-color;    
+border-radius: 20px;      
+border: 6px solid $background-color;  
+}

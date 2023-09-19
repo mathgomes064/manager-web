@@ -1,0 +1,173 @@
+@import "../../../../variables/variables.scss";
+
+section{
+    width: 100%;
+    height: 91.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .sideButtons{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+section .sideButtons .innerSideButtons{
+    width: 90%;
+    height: 95%;
+    background-color: $card-color;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section .sideButtons .innerSideButtons #adicionar_saldo{
+    width: 100%;
+
+    ::ng-deep{
+        .p-button {
+            width: 100%;
+            background-color: $background-color;
+            border: 1px solid $card-color;
+            margin: 10px 0 5px 0;
+        }
+    }
+}
+
+section .sideButtons .innerSideButtons #adicionar_despesa{
+    width: 100%;
+    ::ng-deep{
+        .p-button {
+            width: 100%;
+            background-color: $background-color;
+            border: 1px solid $card-color;
+            margin: 5px 0 10px 0;
+        }
+    }
+}
+
+section .sideData{
+    width: 79%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section .sideData .innerSideData{
+    width: 98%;
+    height: 95%;
+    background-color: $card-color;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+section .sideData .innerSideData .valueAndData{
+    width: 30%;
+}
+
+section .sideData .innerSideData .valueAndData .valueDiv{
+    height: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section .sideData .innerSideData .valueAndData .valueDiv .saldoTotal{
+    color: $green-color;
+}
+
+section .sideData .innerSideData .valueAndData .valueDiv .despesaTotal{
+    color: $red-color;
+}
+
+section .sideData .innerSideData .valueAndData .tables {
+    margin-top: 10px;
+    min-height: 90%;
+    max-height: 580px; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-y: auto;
+    background-color: $background-color;
+    border-radius: 8px;
+}
+
+section .sideData .innerSideData .valueAndData .tables .divReceita{
+    width: 50%;
+}
+
+section .sideData .innerSideData .valueAndData .tables .tableDeReceitas {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+section .sideData .innerSideData .valueAndData .tables .tableDeReceitas th {
+    // border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: $white-color;
+}
+
+section .sideData .innerSideData .valueAndData .tables .tableDeReceitas td {
+    // border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: $green-color;
+}
+  
+section .sideData .innerSideData .valueAndData .tables .tableDeReceitas tr:nth-child(even) {
+    background-color: transparent;
+}
+
+section .sideData .innerSideData .valueAndData .tables .divDespesa{
+    width: 50%;
+}
+
+section .sideData .innerSideData .valueAndData .tables .tableDeDespesas {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+section .sideData .innerSideData .valueAndData .tables .tableDeDespesas th {
+    // border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: $white-color;
+}
+
+section .sideData .innerSideData .valueAndData .tables .tableDeDespesas td {
+    // border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: $red-color;
+}
+  
+section .sideData .innerSideData .valueAndData .tables .tableDeDespesas tr:nth-child(even) {
+    background-color: transparent;
+}
+
+section .sideData .innerSideData .graphic{
+    width: 69%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .sideData .innerSideData .graphic #grafico{
+    width: 80%;
+}
+

@@ -5,14 +5,27 @@ header{
     height: 60px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    // background-color: $spark-color;
+    align-items: center; 
+    border-bottom: 1px solid $card-color;
 }
 
 header div{
-    width: 95%;
+    width: 96%;
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header div h1{
+    color: $white-color;
+}
+
+#sair{
+    ::ng-deep{
+        .p-button {
+            background-color: $card-color;
+            border: 1px solid $card-color;
+        }
+    }
 }

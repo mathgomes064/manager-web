@@ -1,0 +1,87 @@
+<section>
+    <div class="sideButtons">
+        <div class="innerSideButtons">
+            <p-button (click)="adicionarReceita=true" id="adicionar_saldo" label="Adicionar Saldo"></p-button>
+            <p-button (click)="adicionarDespesa=true" id="adicionar_despesa" label="Adicionar Despesa"></p-button>
+        </div>
+    </div>
+
+    <div class="sideData">
+        <div class="innerSideData">
+            <div class="valueAndData">
+                <div class="valueDiv">
+                    <h1 class="saldoTotal">Saldo Total: 1.500,00</h1>
+                    <h1 class="despesaTotal">Despesa Total: 952,00</h1>
+                </div>
+                <div class="tables">
+                    <div class="divReceita">
+                        <table class="tableDeReceitas">
+                            <tr>
+                                <th>Receita</th>
+                            </tr>
+                            <tr>
+                                <td>1.500,00</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="divDespesa">
+                        <table class="tableDeDespesas">
+                            <tr>
+                                <th>Despesas</th>
+                            </tr>
+                            <tr>
+                                <td>400,00</td>
+                            </tr>
+                            <tr>
+                                <td>400,00</td>
+                            </tr>
+                            <tr>
+                                <td>400,00</td>
+                            </tr>
+                            <tr>
+                                <td>400,00</td>
+                            </tr>
+                            <tr>
+                                <td>400,00</td>
+                            </tr>
+                            <tr>
+                                <td>400,00</td>
+                            </tr>
+                            <tr>
+                                <td>400,00</td>
+                            </tr>
+                            <tr>
+                                <td>400,00</td>
+                            </tr>
+                            <tr>
+                                <td>400,00</td>
+                            </tr>
+                            <tr>
+                                <td>400,00</td>
+                            </tr>
+                     
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic">
+                <p-chart id="grafico" type="pie" [data]="data" [options]="options"></p-chart>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<p-dialog header="Adicionar Receita" [(visible)]="adicionarReceita" [style]="{width: '50vw'}">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+</p-dialog>
+
+<p-dialog header="Adiconar Despesa" [(visible)]="adicionarDespesa" [style]="{width: '50vw'}">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+</p-dialog>
