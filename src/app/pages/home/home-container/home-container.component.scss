@@ -85,78 +85,37 @@ section .sideData .innerSideData .valueAndData .valueDiv{
 
 section .sideData .innerSideData .valueAndData .valueDiv .saldoTotal{
     color: $green-color;
+    font-size: 18px;
 }
 
 section .sideData .innerSideData .valueAndData .valueDiv .despesaTotal{
     color: $red-color;
+    font-size: 18px;
 }
 
-section .sideData .innerSideData .valueAndData .tables {
-    margin-top: 10px;
-    min-height: 90%;
-    max-height: 580px; 
+section .sideData .innerSideData .valueAndData .tableDiv{
+    margin-top: 20px;
+    max-height: 90%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    // justify-content: center;
+    cursor: pointer;
     overflow-y: auto;
-    background-color: $background-color;
-    border-radius: 8px;
 }
 
-section .sideData .innerSideData .valueAndData .tables .divReceita{
-    width: 50%;
-}
-
-section .sideData .innerSideData .valueAndData .tables .tableDeReceitas {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-  
-section .sideData .innerSideData .valueAndData .tables .tableDeReceitas th {
-    // border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+section .sideData .innerSideData .valueAndData .tableDiv tr th{
     color: $white-color;
+    background-color: transparent;
 }
 
-section .sideData .innerSideData .valueAndData .tables .tableDeReceitas td {
-    // border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+section .sideData .innerSideData .valueAndData .tableDiv .receitaValues{
     color: $green-color;
-}
-  
-section .sideData .innerSideData .valueAndData .tables .tableDeReceitas tr:nth-child(even) {
-    background-color: transparent;
+    background-color: $card-color;
 }
 
-section .sideData .innerSideData .valueAndData .tables .divDespesa{
-    width: 50%;
-}
-
-section .sideData .innerSideData .valueAndData .tables .tableDeDespesas {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-  
-section .sideData .innerSideData .valueAndData .tables .tableDeDespesas th {
-    // border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    color: $white-color;
-}
-
-section .sideData .innerSideData .valueAndData .tables .tableDeDespesas td {
-    // border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+section .sideData .innerSideData .valueAndData .tableDiv .despesaValues{
     color: $red-color;
-}
-  
-section .sideData .innerSideData .valueAndData .tables .tableDeDespesas tr:nth-child(even) {
-    background-color: transparent;
+    background-color: $card-color;
 }
 
 section .sideData .innerSideData .graphic{
@@ -170,4 +129,51 @@ section .sideData .innerSideData .graphic{
 section .sideData .innerSideData .graphic #grafico{
     width: 80%;
 }
+
+// MODAIS
+
+.dialog{
+    ::ng-deep{
+        .p-dialog{
+            width: 20vw;
+            height: 35vh;
+        }
+
+        .p-button{
+            width: 100%;
+        }
+
+        .p-inputnumber{
+            width: 100%;
+        }
+    }
+}
+
+.dialog .innerDiv{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dialog .innerDiv .inputReceita{
+    width: 100%;
+}
+
+.dialog .innerDiv .submitReceita{
+    width: 100%;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
 

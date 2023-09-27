@@ -8,6 +8,9 @@ import { HomeContainerComponent } from './home/home-container/home-container.com
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { DialogModule } from 'primeng/dialog';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { DialogModule } from 'primeng/dialog';
     ReactiveFormsModule,
     ButtonModule,
     ChartModule,
-    DialogModule
+    DialogModule,
+    InputNumberModule,
+    ProgressSpinnerModule,
+    TableModule
   ]
 })
 export class PagesModule { }
