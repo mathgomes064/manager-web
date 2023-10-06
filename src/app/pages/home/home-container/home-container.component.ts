@@ -3,6 +3,7 @@ import { BudgetService } from '../budget-service/budget.service';
 import { createReceita } from 'src/app/shared/models/receitas';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { createDespesa } from 'src/app/shared/models/despesas';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home-container',
@@ -24,7 +25,7 @@ public currentDespesaId: string = ""
 
 constructor(
     private formBuilder: FormBuilder,
-    private budgetService: BudgetService
+    private budgetService: BudgetService,
 ){}
 
 data: any;
@@ -165,6 +166,15 @@ submitReceitas(){
     }
 }
 
+deleteReceitaFn(){
+    this.budgetService.deleteReceita(this.currentReceitaId).subscribe(
+        res =>{
+            this.getCurrentReceitas()
+            this.adicionarReceita = false
+        }
+    )
+}
+
 registerDespesaForm!: FormGroup
 public createDespesaForm(Register: createDespesa){
 this.registerDespesaForm = this.formBuilder.group({
@@ -199,5 +209,13 @@ submitDespesa(){
     }
 }
 
+deleteDespesaFn(){
+    this.budgetService.deleteDespesas(this.currentDespesaId).subscribe(
+        res => {
+            this.getCurrentDespesas()
+            this.adicionarDespesa = false
+        }
+    )
+}
 
 }

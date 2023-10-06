@@ -1,0 +1,18 @@
+<section class="container">
+    <h2>Cadastro</h2>
+
+    <div>
+        <input class="registerInput" placeholder="Nome" pInputText/>
+
+        <input class="registerInput" placeholder="E-mail" pInputText/>
+
+        <p-password class="passwordInput" placeholder="Senha" [toggleMask]="true" [feedback]="false"></p-password>
+
+        <input class="registerInput" placeholder="Telefone" pInputText/>
+        
+        <p-button class="loginButton" type="submit" label="Cadastrar"></p-button>
+
+        <p-button class="backButton" label="voltar" [routerLink]="['/login']"></p-button>
+    </div>
+    
+</section>

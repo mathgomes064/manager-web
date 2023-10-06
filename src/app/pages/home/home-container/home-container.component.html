@@ -58,6 +58,7 @@
     <form class="innerDiv" [formGroup]="registerReceitaForm" (ngSubmit)="submitReceitas()">
         <p-inputNumber formControlName="entrada" placeholder="Entrada" class="inputReceita" inputId="locale-us" mode="decimal" locale="en-US" [minFractionDigits]="2"> </p-inputNumber>
         <p-button type="submit" class="submitReceita" label="Submit"></p-button>
+        <p-button *ngIf="createOrUpdateReceita" (click)="deleteReceitaFn()" class="submitReceita" label="Delete"></p-button>
     </form>
 </p-dialog>
 
@@ -69,6 +70,7 @@
     <form class="innerDiv" [formGroup]="registerDespesaForm" (ngSubmit)="submitDespesa()">
         <p-inputNumber formControlName="saida" placeholder="Saida" class="inputReceita" inputId="locale-us" mode="decimal" locale="en-US" [minFractionDigits]="2"> </p-inputNumber>
         <p-button type="submit" class="submitReceita" label="Submit"></p-button>
+        <p-button *ngIf="createOrUpdateDespesa" (click)="deleteDespesaFn()" class="submitReceita" label="Delete"></p-button>
     </form>
 </p-dialog>
 

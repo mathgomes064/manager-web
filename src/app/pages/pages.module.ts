@@ -11,11 +11,21 @@ import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TableModule } from 'primeng/table';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { RegisterContainerComponent } from './register/register-container/register-container.component';
+import { LoginContainerComponent } from './login/login-container/login-container.component';
+import { PasswordModule } from 'primeng/password';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    HomeContainerComponent
+    HomeContainerComponent,
+    LoginComponent,
+    RegisterComponent,
+    RegisterContainerComponent,
+    LoginContainerComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +38,9 @@ import { TableModule } from 'primeng/table';
     DialogModule,
     InputNumberModule,
     ProgressSpinnerModule,
-    TableModule
+    TableModule,
+    PasswordModule,
+    InputTextModule
   ]
 })
 export class PagesModule { }

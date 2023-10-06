@@ -24,6 +24,10 @@ export class BudgetService {
     return this.http.patch(`${environment.BASE_URL}/api/receitas/${receitaId}`, data)
   }
 
+  public deleteReceita(receitaId: string): Observable<any>{
+    return this.http.delete(`${environment.BASE_URL}/api/receitas/${receitaId}`)
+  }
+
   public registerDespesa(payload: {entrada: number}): Observable<any>{
     return this.http.post(`${environment.BASE_URL}/api/despesas`, payload)
   }
@@ -34,6 +38,10 @@ export class BudgetService {
 
   public updateDespesa(data: any, despesaId: string): Observable<any>{
     return this.http.patch(`${environment.BASE_URL}/api/despesas/${despesaId}`, data)
+  }
+
+  public deleteDespesas(despesaId: string): Observable<any>{
+    return this.http.delete(`${environment.BASE_URL}/api/despesas/${despesaId}`)
   }
 
 }
