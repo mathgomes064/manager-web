@@ -23,7 +23,7 @@
     margin: 5px 0;
 }
 
-.container div{
+.container form{
     width: 90%;
     height: 85%;
     padding-top: 20px;
@@ -33,7 +33,7 @@
     align-items: center;
 }
 
-.container div .registerInput{
+.container form .registerInput{
     width: 80%;
     color: $white-color;
     background-color: $card-color;
@@ -43,7 +43,7 @@
     }
 }
 
-.container div .passwordInput{
+.container form .passwordInput{
     width: 80%;
     ::ng-deep{
         .p-inputtext{
@@ -73,7 +73,7 @@
     }
 }
 
-.container div .loginButton{
+.container form .loginButton{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -88,7 +88,7 @@
     }
 }
 
-.container div .backButton{
+.container form .backButton{
     width: 100%;
     display: flex;
     justify-content: center;

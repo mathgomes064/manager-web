@@ -1,13 +1,13 @@
 <section class="container">
     <h2>Login</h2>
 
-    <div>
-        <input class="emailInput" placeholder="E-mail" pInputText/>
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+        <input formControlName="email" class="emailInput" placeholder="E-mail" pInputText/>
 
-        <p-password class="passwordInput" placeholder="Senha" [toggleMask]="true" [feedback]="false"></p-password>
+        <p-password formControlName="password" class="passwordInput" placeholder="Senha" [toggleMask]="true" [feedback]="false"></p-password>
         
         <p-button class="loginButton" type="submit" label="Entrar"></p-button>
-    </div>
+    </form>
 
     <h2 class="toRegister">Caso não tenha conta, <a class="link" href=""  [routerLink]="['/register']">Cadastre-se</a></h2>
     
