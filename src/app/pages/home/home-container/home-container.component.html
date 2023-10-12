@@ -10,36 +10,47 @@
         <div class="innerSideData">
             <div class="valueAndData">
                 <div class="valueDiv">
-                    <h1 class="saldoTotal">Saldo Total: {{totalReceitas}}</h1>
-                    <h1 class="despesaTotal">Despesa Total: {{totalDespesas}}</h1>
+                    <h1 class="saldoTotal">Saldo Total: {{totalReceitas}} R$</h1>
+                    <h1 class="despesaTotal">Despesa Total: {{totalDespesas}} R$</h1>
                 </div>
 
                 <div class="tableDiv">
-                    <p-table [value]="receitas">
-                        <ng-template pTemplate="header">
-                            <tr>
-                                <th>Receita</th>
-                            </tr>
-                        </ng-template>
-                        <ng-template pTemplate="body" let-receita>
-                            <tr (click)="openEntradaToUpdate(receita)">
-                                <td class="receitaValues">R$ {{receita.entrada}}</td>
-                            </tr>
-                        </ng-template>
-                    </p-table>
-    
-                    <p-table [value]="despesas">
-                        <ng-template pTemplate="header">
-                            <tr>
-                                <th>Despesas</th>
-                            </tr>
-                        </ng-template>
-                        <ng-template pTemplate="body" let-despesa>
-                            <tr (click)="openSaidaToUpdate(despesa)">
-                                <td class="despesaValues">R$ -{{despesa.saida}}</td>
-                            </tr>
-                        </ng-template>
-                    </p-table>
+                    <p-tabView styleClass="tabview-custom">
+                        <p-tabPanel>
+                            <ng-template pTemplate="header">
+                                <span>Receitas</span>
+                            </ng-template>
+                            <p-table [value]="receitas">
+                                <ng-template pTemplate="body" let-receita>
+                                    <tr>
+                                        <p class="receitaValues">R$ {{receita.entrada}}</p>
+                                        <div class="buttonDiv">
+                                            <p-button (click)="openEntradaToUpdate(receita)" class="editButton" icon="pi pi-pencil"></p-button>
+                                            <p-button (click)="deleteReceitaFn(receita.id)" class="deleteButton" icon="pi pi-times"></p-button>
+                                        </div>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </p-tabPanel>
+                        <p-tabPanel header="Header II">
+                            <ng-template pTemplate="header">
+                                <span>Despesas</span>
+                            </ng-template>
+
+                            <p-table [value]="despesas">
+                                <ng-template pTemplate="body" let-despesa>
+                                    <tr>
+                                        <p class="despesaValues">R$ - {{despesa.saida}}</p>
+                                        <div class="buttonDiv">
+                                            <p-button (click)="openSaidaToUpdate(despesa)" class="editButton" icon="pi pi-pencil"></p-button>
+                                            <p-button (click)="deleteDespesaFn(despesa.id)" class="deleteButton" icon="pi pi-times"></p-button>
+                                        </div>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+
+                        </p-tabPanel>
+                    </p-tabView>
                 </div>
             </div>
             <div class="graphic">
@@ -58,7 +69,7 @@
     <form class="innerDiv" [formGroup]="registerReceitaForm" (ngSubmit)="submitReceitas()">
         <p-inputNumber formControlName="entrada" placeholder="Entrada" class="inputReceita" inputId="locale-us" mode="decimal" locale="en-US" [minFractionDigits]="2"> </p-inputNumber>
         <p-button type="submit" class="submitReceita" label="Submit"></p-button>
-        <p-button *ngIf="createOrUpdateReceita" (click)="deleteReceitaFn()" class="submitReceita" label="Delete"></p-button>
+        <p-button *ngIf="createOrUpdateReceita" class="submitReceita" label="Delete"></p-button>
     </form>
 </p-dialog>
 
@@ -70,7 +81,7 @@
     <form class="innerDiv" [formGroup]="registerDespesaForm" (ngSubmit)="submitDespesa()">
         <p-inputNumber formControlName="saida" placeholder="Saida" class="inputReceita" inputId="locale-us" mode="decimal" locale="en-US" [minFractionDigits]="2"> </p-inputNumber>
         <p-button type="submit" class="submitReceita" label="Submit"></p-button>
-        <p-button *ngIf="createOrUpdateDespesa" (click)="deleteDespesaFn()" class="submitReceita" label="Delete"></p-button>
+        <p-button *ngIf="createOrUpdateDespesa" class="submitReceita" label="Delete"></p-button>
     </form>
 </p-dialog>
 

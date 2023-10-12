@@ -5,7 +5,6 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeContainerComponent } from './home/home-container/home-container.component';
-import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -18,6 +17,8 @@ import { LoginContainerComponent } from './login/login-container/login-container
 import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
+import { TabViewModule } from 'primeng/tabview';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,6 @@ import { ToastModule } from 'primeng/toast';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    ButtonModule,
     ChartModule,
     DialogModule,
     InputNumberModule,
@@ -42,7 +42,9 @@ import { ToastModule } from 'primeng/toast';
     TableModule,
     PasswordModule,
     InputTextModule,
-    ToastModule
+    ToastModule,
+    TabViewModule,
+    ButtonModule,
   ]
 })
 export class PagesModule { }
