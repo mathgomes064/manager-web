@@ -139,12 +139,35 @@ section .sideData .innerSideData .graphic #grafico{
             height: 40vh;
         }
 
+        .p-dialog .p-dialog-content {
+            background: $background-color;
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .p-dialog-draggable .p-dialog-header  {
+            background: $background-color;
+            color: $white-color;
+        }
+
+        .p-dialog .p-dialog-header .p-dialog-header-icon:last-child {
+            margin-right: 0;
+            color: white;
+        }
+
         .p-button{
             width: 100%;
+            background-color: $card-color;
+            border: 1px solid $card-color;
         }
 
         .p-inputnumber{
             width: 100%;
+        }
+
+        .p-inputtext {
+            background-color: $card-color;
+            color: $white-color;
+
         }
     }
 }
@@ -175,5 +198,4 @@ section .sideData .innerSideData .graphic #grafico{
     justify-content: center;
     align-items: center;
     z-index: 9999;
-  }
-
+}

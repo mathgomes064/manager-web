@@ -17,6 +17,7 @@ import { RegisterContainerComponent } from './register/register-container/regist
 import { LoginContainerComponent } from './login/login-container/login-container.component';
 import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { InputTextModule } from 'primeng/inputtext';
     ProgressSpinnerModule,
     TableModule,
     PasswordModule,
-    InputTextModule
+    InputTextModule,
+    ToastModule
   ]
 })
 export class PagesModule { }

@@ -2,9 +2,9 @@
     <h2>Cadastro</h2>
 
     <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
-        <input formControlName="nome" class="registerInput" placeholder="Nome" pInputText/>
+        <input formControlName="name" class="registerInput" placeholder="Nome" pInputText/>
 
-        <input formControlName="email" class="registerInput" placeholder="E-mail" pInputText/>
+        <input formControlName="username" class="registerInput" placeholder="E-mail" pInputText/>
 
         <p-password formControlName="password" class="passwordInput" placeholder="Senha" [toggleMask]="true" [feedback]="false"></p-password>
 
@@ -16,3 +16,4 @@
     </form>
     
 </section>
+<p-toast></p-toast>

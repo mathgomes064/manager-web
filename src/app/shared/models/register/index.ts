@@ -1,6 +1,6 @@
 export class register{
-    nome: string = "";
-    email: string = "";
+    name: string = "";
+    username: string = "";
     password: string = "";
     telefone: string = "";
 }

@@ -1,16 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { login } from 'src/app/shared/models/login';
+import { LoginService } from '../login-service/login.service';
+import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-container',
   templateUrl: './login-container.component.html',
-  styleUrls: ['./login-container.component.scss']
+  styleUrls: ['./login-container.component.scss'],
+  providers: [MessageService]
 })
 export class LoginContainerComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private loginService: LoginService,
+    private messageService: MessageService,
+    private router: Router,
   ){}
 
   ngOnInit(): void {
@@ -20,13 +27,29 @@ export class LoginContainerComponent implements OnInit {
   loginForm!: FormGroup;
   public createLoginForm(register: login){
     this.loginForm = this.formBuilder.group({
-      email: [register.email, [Validators.required, Validators.email]],
+      username: [register.username, [Validators.required, Validators.email]],
       password: [register.password, [Validators.required]]
     })
   }
   
   public submitForm(){
-    console.log(this.loginForm.value)
+    if(this.loginForm.valid){
+      this.loginService.login(
+        this.loginForm.value
+      ).subscribe({
+        next: (res: any) => {
+          localStorage.clear()
+          localStorage.setItem('access_token', res.access)
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Logando...' });
+          this.router.navigate(['home'])
+        },
+        error: (err) => {
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: "Email ou senha inválidos"})
+        }
+      })
+    }else{
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: "Email ou senha inválidos" })
+    }
   }
 
 }

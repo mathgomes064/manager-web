@@ -36,6 +36,12 @@ ngOnInit() {
 this.getCurrentReceitas()
 this.getCurrentDespesas()
 
+// this.budgetService.getUsers().subscribe(
+//     res =>{
+//         console.log(res)
+//     }
+// )
+
 const documentStyle = getComputedStyle(document.documentElement);
 const textColor = documentStyle.getPropertyValue('--text-color');
 
@@ -56,9 +62,9 @@ this.createDespesaForm(new createDespesa())
 
 getCurrentReceitas(){
     let valorTotal = 0
-    this.budgetService.getReceita().subscribe(
+    this.budgetService.getUsers().subscribe(
         res =>{
-            this.receitas  = res
+            this.receitas  = res.receitas
             this.receitas.forEach((objeto: any) => {
                 valorTotal += objeto.entrada;
             });
@@ -83,9 +89,9 @@ getCurrentReceitas(){
 
 getCurrentDespesas(){
     let valorTotal = 0
-    this.budgetService.getDespesa().subscribe(
+    this.budgetService.getUsers().subscribe(
         res =>{
-            this.despesas  = res
+            this.despesas  = res.despesas
             this.despesas.forEach((objeto: any) => {
                 valorTotal += objeto.saida;
             });
