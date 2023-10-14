@@ -19,6 +19,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ButtonModule } from 'primeng/button';
     ToastModule,
     TabViewModule,
     ButtonModule,
+    InputTextareaModule
   ]
 })
 export class PagesModule { }

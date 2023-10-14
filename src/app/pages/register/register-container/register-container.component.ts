@@ -37,7 +37,7 @@ export class RegisterContainerComponent implements OnInit {
     if(this.registerForm.valid){
       this.registerService.registerUser(this.registerForm.value).subscribe({
         next: (res: any) => {
-          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Usuário Cadastrado' });
           this.router.navigate(['login'])
         },
         error: (err: any) => {

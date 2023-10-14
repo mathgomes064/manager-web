@@ -1,0 +1,66 @@
+@import "../../../variables/variables.scss";
+
+.sideMenu{
+
+    ::ng-deep{
+        .p-panelmenu-header-content{
+            border: none;
+        }
+
+        .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content .p-panelmenu-header-action {
+            color: $white-color;
+        }
+
+        .p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content .p-menuitem-link {
+            color: $white-color;
+            padding: 0.75rem 1.25rem;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content {
+            transition: box-shadow 0.2s;
+            border-radius: 0;
+        }
+
+        .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
+            color: $white-color;
+            background: $card-color;
+            border-radius: 6px;
+            transition: box-shadow 0.2s;
+
+            &:hover{
+                background-color: $background-color; 
+                box-shadow: none;
+            }
+        }
+
+        .p-panelmenu .p-panelmenu-header:not(.p-disabled).p-highlight:hover .p-panelmenu-header-content {
+            border-color: $card-color;
+            background: $card-color;
+            color: $white-color;
+        }
+
+        .p-panelmenu .p-panelmenu-content {
+            padding: 0.25rem 0;
+            border: 1px solid $card-color;
+            background: $card-color;
+            color: $white-color;
+            border-top: 0;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+
+        .p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-icon {
+            color:$white-color;
+            margin-right: 0.5rem;
+        }
+
+        .p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+            color: $white-color;
+        }
+    }
+
+}

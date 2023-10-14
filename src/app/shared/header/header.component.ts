@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderService } from './header-service/header.service';
 
@@ -8,7 +8,9 @@ import { HeaderService } from './header-service/header.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input() innerUserData: any
   public userData: any
+  public items: any
 
   constructor(
     private router: Router,
@@ -21,6 +23,7 @@ export class HeaderComponent implements OnInit {
         this.userData = res
       }
     )
+    
   }
   
   public deslogar(){

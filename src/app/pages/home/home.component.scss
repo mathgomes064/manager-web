@@ -7,3 +7,335 @@ main{
     flex-direction: column;
     justify-content: space-between;
 }
+
+section{
+    width: 100%;
+    height: 91.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .sideButtons{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+section .sideButtons .innerSideButtons{
+    width: 90%;
+    height: 95%;
+    background-color: $card-color;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+section .sideButtons .innerSideButtons #adicionar_saldo{
+    width: 100%;
+
+    ::ng-deep{
+        .p-button {
+            width: 100%;
+            background-color: $background-color;
+            border: 1px solid $card-color;
+            margin: 10px 0 5px 0;
+        }
+    }
+}
+
+section .sideButtons .innerSideButtons #adicionar_despesa{
+    width: 100%;
+    ::ng-deep{
+        .p-button {
+            width: 100%;
+            background-color: $background-color;
+            border: 1px solid $card-color;
+            margin: 5px 0 10px 0;
+        }
+    }
+}
+
+section .sideData{
+    width: 79%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section .sideData .innerSideData{
+    width: 98%;
+    height: 95%;
+    background-color: $card-color;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+section .sideData .innerSideData .valueAndData{
+    width: 25%;
+}
+
+section .sideData .innerSideData .valueAndData .valueDiv{
+    height: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section .sideData .innerSideData .valueAndData .valueDiv .saldoTotal{
+    color: $green-color;
+    font-size: 18px;
+}
+
+section .sideData .innerSideData .valueAndData .valueDiv .despesaTotal{
+    color: $red-color;
+    font-size: 18px;
+}
+
+section .sideData .innerSideData .valueAndData .tableDiv{
+    margin-top: 20px;
+    max-height: 90%;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    overflow-y: auto;
+}
+
+section .sideData .innerSideData .valueAndData .tableDiv p-tabView{
+    width: 100%;
+}
+
+section .sideData .innerSideData .valueAndData .tableDiv {
+    ::ng-deep{
+        .p-tabview-nav-link{
+            background-color: transparent;
+            color: $white-color;
+        }
+        
+        .p-tabview-nav{
+            background-color: transparent;
+        }
+
+        .p-tabview .p-tabview-panels{
+            background-color: transparent;
+            padding: 0;
+        }
+    }
+}
+
+section .sideData .innerSideData .valueAndData .tableDiv tr{
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border-bottom: 1px solid $white-color;
+}
+
+section .sideData .innerSideData .valueAndData .tableDiv tr .buttonDiv{
+    min-width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+}
+
+section .sideData .innerSideData .valueAndData .tableDiv tr .buttonDiv .editButton{
+    ::ng-deep{
+        .p-button {
+            color: #ffffff;
+            background: #D97706;
+            border: 1px solid #D97706;
+            padding: 0;
+            font-size: 1rem;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+            border-radius: 100px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+section .sideData .innerSideData .valueAndData .tableDiv tr .buttonDiv .deleteButton{
+    ::ng-deep{
+        .p-button {
+            color: #ffffff;
+            background: $red-color;
+            border: 1px solid $red-color;
+            padding: 0;
+            font-size: 1rem;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+            border-radius: 100px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+section .sideData .innerSideData .valueAndData .tableDiv .receitaValues{
+    color: $green-color;
+    background-color: $card-color;
+}
+
+section .sideData .innerSideData .valueAndData .tableDiv .despesaValues{
+    color: $red-color;
+    background-color: $card-color;
+}
+
+section .sideData .innerSideData .graphic{
+    width: 45%;
+    height: 70%;
+    display: flex;
+    justify-content: flex-end;
+    // align-items: center;
+}
+
+section .sideData .innerSideData .graphic #grafico{
+    width: 80%;
+}
+
+// MODAIS
+
+.dialog{
+    ::ng-deep{
+        .p-dialog{
+            width: 40vw;
+            height: 60vh;
+        }
+
+        .p-dialog .p-dialog-content {
+            background: $background-color;
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .p-dialog-draggable .p-dialog-header  {
+            background: $background-color;
+            color: $white-color;
+        }
+
+        .p-dialog .p-dialog-header .p-dialog-header-icon:last-child {
+            margin-right: 0;
+            color: white;
+        }
+
+        .p-button{
+            width: 100%;
+            background-color: $card-color;
+            border: 1px solid $card-color;
+        }
+
+        .p-inputnumber{
+            width: 100%;
+        }
+
+        .p-inputtext {
+            background-color: $card-color;
+            color: $white-color;
+
+        }
+    }
+}
+
+.dialog .innerDiv{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dialog .innerDiv .inputReceita{
+    width: 100%;
+}
+
+.dialog .innerDiv .submitReceita{
+    width: 100%;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.userDialog{
+    ::ng-deep{
+        .p-dialog{
+            width: 25vw;
+            height: 55vh;
+        }
+
+        .p-dialog .p-dialog-content {
+            background: $background-color;
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .p-dialog-draggable .p-dialog-header  {
+            background: $background-color;
+            color: $white-color;
+        }
+
+        .p-dialog .p-dialog-header .p-dialog-header-icon:last-child {
+            margin-right: 0;
+            color: white;
+        }
+
+        .p-button{
+            width: 100%;
+            background-color: $card-color;
+            border: 1px solid $card-color;
+        }
+
+        .p-inputnumber{
+            width: 100%;
+        }
+
+        .p-inputtext {
+            background-color: $card-color;
+            color: $white-color;
+
+        }
+    }
+}
+
+.userDialog .innerUserDialog{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userDialog .innerUserDialog .registerInput{
+    width: 100%;
+}
+
+.userDialog .innerUserDialog .passwordInput{
+    width: 100%;
+
+    ::ng-deep{
+        .p-password {
+            width: 100%;
+        }
+
+        .p-inputtext {
+            width: 100%;
+        }
+    }
+}
+
+.userDialog .innerUserDialog .loginButton{
+    width: 100%;
+}

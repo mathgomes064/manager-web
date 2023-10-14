@@ -12,7 +12,7 @@ export class BudgetService {
     private http: HttpClient,
   ) { }
 
-  public getUsers(): Observable<any>{
+  public getUser(): Observable<any>{
     return this.http.get(`${environment.BASE_URL}/api/self-profile`)
   }
 

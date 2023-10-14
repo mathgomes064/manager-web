@@ -4,3 +4,10 @@ export class register{
     password: string = "";
     telefone: string = "";
 }
+
+export class updateUser{
+    name: string = "";
+    username: string = "";
+    password: string = "";
+    telefone: string = "";
+}

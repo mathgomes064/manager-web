@@ -12,3 +12,7 @@
     <h2 class="toRegister">Caso não tenha conta, <a class="link" href=""  [routerLink]="['/register']">Cadastre-se</a></h2>
     
 </section>
+<p-toast></p-toast>
+<div *ngIf="showSpinner" class="center-spinner">
+    <p-progressSpinner [style]="{ 'width': '80px', 'height': '80px' }"></p-progressSpinner>
+</div>

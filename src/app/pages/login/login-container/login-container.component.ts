@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   providers: [MessageService]
 })
 export class LoginContainerComponent implements OnInit {
+  public showSpinner: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,24 +33,32 @@ export class LoginContainerComponent implements OnInit {
     })
   }
   
-  public submitForm(){
-    if(this.loginForm.valid){
-      this.loginService.login(
-        this.loginForm.value
-      ).subscribe({
+  public submitForm() {
+    if (this.loginForm.valid) {
+      this.showSpinner = true;
+  
+      this.loginService.login(this.loginForm.value).subscribe({
         next: (res: any) => {
-          localStorage.clear()
-          localStorage.setItem('access_token', res.access)
-          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Logando...' });
-          this.router.navigate(['home'])
+          localStorage.clear();
+          localStorage.setItem('access_token', res.access);
+          this.messageService.add({severity: 'success', summary: 'Success', detail: 'Logando...'
+          });
+          this.router.navigate(['home']);
         },
         error: (err) => {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: "Email ou senha inválidos"})
+          this.showSpinner = false;
+          this.messageService.add({severity: 'error', summary: 'Error', detail: "Email ou senha inválidos"
+          });
+        },
+        complete: () => {
+          this.showSpinner = false;
         }
-      })
-    }else{
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: "Email ou senha inválidos" })
+      });
+    } else {
+      this.messageService.add({severity: 'error', summary: 'Error', detail: "Email ou senha inválidos"
+      });
     }
   }
+  
 
 }
