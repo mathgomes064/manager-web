@@ -13,7 +13,7 @@ export class RegisterService {
   ) { }
 
   public registerUser(payload: {name: string, username: string, password: string, telfone: string}): Observable<any>{
-    return this.http.post(`${environment.BASE_URL}/api/users/`, payload)
+    return this.http.post(`${environment.BASE_URL}/api/users`, payload)
   }
 
   public updateUser(payload: any, userId: string): Observable<any>{
